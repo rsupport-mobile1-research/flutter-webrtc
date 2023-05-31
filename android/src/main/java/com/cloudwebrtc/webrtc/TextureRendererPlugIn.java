@@ -38,29 +38,30 @@ public class TextureRendererPlugIn {
         return _instance;
     }
 
-    public long getTextureId(String itemId) {
-        if (itemId.equals("refreshView")) {
-            for (TextureEntity data : listUnityTexture) {
-                if (data.isCreatedExternalTexture()) {
-                    updateTexture(data);
-                }
-            }
-            return;
-        }
-        if (listUnityTexture.size() > 0) {
-            for (TextureEntity data : listUnityTexture) {
-                if (data.getItemId().equals(itemId)) {
-                    if (data.isCreatedExternalTexture()) {
-                        updateTexture(data);
-                    } else {
-                        bindExternalTexture(data);
-                    }
-                    return data.getExternalTextureId();
-                }
-            }
-        }
-        return -1;
-    }
+    // This method is not used
+    // public long getTextureId(String itemId) {
+    //     if (itemId.equals("refreshView")) {
+    //         for (TextureEntity data : listUnityTexture) {
+    //             if (data.isCreatedExternalTexture()) {
+    //                 updateTexture(data);
+    //             }
+    //         }
+    //         return;
+    //     }
+    //     if (listUnityTexture.size() > 0) {
+    //         for (TextureEntity data : listUnityTexture) {
+    //             if (data.getItemId().equals(itemId)) {
+    //                 if (data.isCreatedExternalTexture()) {
+    //                     updateTexture(data);
+    //                 } else {
+    //                     bindExternalTexture(data);
+    //                 }
+    //                 return data.getExternalTextureId();
+    //             }
+    //         }
+    //     }
+    //     return -1;
+    // }
 
     public void setVideoTrack(VideoTrack videoTrack) {
         for (TextureEntity data : listUnityTexture) {
